@@ -1,0 +1,10 @@
+
+.Pagination {
+    color: #2dcaca;
+    cursor: pointer;
+    margin: 0 7px;
+}
+.selectedPage {
+    color: #0e4949;
+    font-weight: 700;
+}

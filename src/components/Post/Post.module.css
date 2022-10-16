@@ -1,0 +1,11 @@
+.mesage {
+    color: #4b2901;
+    border: 1px solid greenyellow;
+}
+.likes {
+    background-color: #fff;
+    border-radius: 50%;
+    color: red;
+    font-size: 11px;
+    width: 14px;
+}

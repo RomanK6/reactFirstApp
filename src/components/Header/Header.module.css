@@ -1,0 +1,20 @@
+.header {
+    background-color: #494949;
+    grid-area: header;
+    display: flex;
+}
+.header__content {
+    
+}
+.header__logo {
+
+}
+.LoginBlock {
+    margin-left: auto;
+    padding: 30px;
+    color: azure;
+}
+.LoginBlock a {
+    color: azure;
+    text-decoration: none;
+}

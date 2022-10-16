@@ -1,0 +1,12 @@
+.userNickname {
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.item {
+    color: #3f4136;
+}
+.item img {
+    border-radius: 50%;
+    width: 80px;
+}

@@ -1,0 +1,16 @@
+.Sidebar {
+    background-color: #ad1010;
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    
+}
+.Sidebar__elem {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.active {
+    color: gold;
+}

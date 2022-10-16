@@ -1,0 +1,22 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    max-width: 200px;
+}
+.label {
+    color: #1f1e1c;
+}
+.input {
+    background-color: #ddceaf;
+}
+.submit {
+    margin: 10px 0;
+    border: none;
+    background-color: aqua;
+    box-shadow: 2px 2px 2px black;
+}
+.submit:active {
+    background-color: #1dc7c7;
+    box-shadow: none;
+}

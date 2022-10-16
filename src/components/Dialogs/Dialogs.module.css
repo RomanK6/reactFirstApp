@@ -1,0 +1,20 @@
+.dialog {
+    color: #a74d03;
+    display: flex;
+}
+.chatList {
+    border-right: 1px solid red;
+    width: 25%;
+
+}
+.chatItem {
+    padding-bottom: 15px;
+    color: #a74d03;
+    text-decoration: none;
+}
+
+.dialogWindow {
+    background-color: #6e6c6c7a;
+    width: 75%;
+    margin: 15px;
+}
