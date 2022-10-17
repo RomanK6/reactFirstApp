@@ -3,13 +3,19 @@ import avatar from '../../images/i.jpg'
 import Preloader from '../common/Preloader/Preloader';
 
 const ProfileData = (props) => {
-    
+
     if (!props.profile) {
         return <Preloader />
     } else {
+        const mainPhotoSelected = (e) => {
+            if (e.target.files.length) {
+                props.savePhoto(e.target.files[0])
+            }
+        }
         return (
             <div className={css.item}>
                 <img src={props.profile.photos.small === null ? avatar : props.profile.photos.small} alt="avatar" />
+                {props.isOwner && <input type={'file'} onChange={mainPhotoSelected} />}
                 <div className={css.userNickname}>{props.profile.fullName}</div>
                 <ul className="Data">
                     <li>
