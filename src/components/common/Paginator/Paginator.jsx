@@ -1,5 +1,6 @@
 import stules from './Paginator.module.css';
 import { useState } from 'react';
+import classNames from 'classnames';
 
 
 let Paginator = ({ totalItemsCount, pageSize, currentPage, onChanget, portionSize = 20 }) => {
@@ -24,7 +25,9 @@ let Paginator = ({ totalItemsCount, pageSize, currentPage, onChanget, portionSiz
         <span 
             onClick={(e) => {onChanget(bullet)}}
             key={bullet} 
-            className={stules.Pagination + ' ' + (currentPage === bullet ? stules.selectedPage : '')}>
+            //className={stules.Pagination + ' ' + (currentPage === bullet ? stules.selectedPage : '')}
+            className={classNames( stules.Pagination, {[stules.selectedPage]: currentPage === bullet} )}
+            >
             {bullet}
         </span>)}
         {portionCount > portionNumber && <button onClick={() => {

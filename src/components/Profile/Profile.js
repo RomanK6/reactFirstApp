@@ -13,6 +13,7 @@ const Profile = (props) => {
             <ProfileData profile={props.profile} 
             isOwner={props.isOwner}
             savePhoto={props.savePhoto}
+            saveProfile= {props.saveProfile}
             />
             {/*<ProfileStatus status={props.status} updateStatus={props.updateStatus} />*/}
             <ProfileStatusHooks status={props.status} updateStatus={props.updateStatus} />

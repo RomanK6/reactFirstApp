@@ -4,7 +4,8 @@ import styles from './LoginForm.module.css';
 import { required } from './../../utils/validators/validators';
 
 
-const LoginForm = ({handleSubmit, error}) => {
+const LoginForm = ({handleSubmit, error, captchaUrl}) => {
+    
     return <form onSubmit={handleSubmit} className="Form">
         <div className={styles.login_wrapper}>
             <Field placeholder={'Email'} 
@@ -23,6 +24,8 @@ const LoginForm = ({handleSubmit, error}) => {
         {error && <div className={styles.formSummaryError}>
             {error}
         </div>}
+        {captchaUrl && <img src={captchaUrl} />}
+        {captchaUrl && <Field placeholder={'simbols from image'} name={'captcha'} validate={[required]} component={Input} />}
         <div className={styles.login_wrapper}>
             <button>
                 Login

@@ -1,8 +1,8 @@
 import { stopSubmit } from 'redux-form';
 import { loginPost } from '../api/api';
-import {getOnMeThunk} from './auth-reducer';
+import { getOnMeThunk } from './auth-reducer';
 
-const INITIALIZED_success = 'INITIALIZED_success';
+const INITIALIZED_SUCCEES = 'samurai-network/app/INITIALIZED_SUCCEES';
 
 let initialState = {
     initialized: false,
@@ -10,7 +10,7 @@ let initialState = {
 
 const appReducer = ( state = initialState, action ) => {
     switch ( action.type ) {
-        case INITIALIZED_success:
+        case INITIALIZED_SUCCEES:
             return {
                 ...state,
                 initialized: true,
@@ -20,7 +20,7 @@ const appReducer = ( state = initialState, action ) => {
     }
 }
 
-export const initializedSuccess = () => ({ type: INITIALIZED_success});
+export const initializedSuccess = () => ({ type: INITIALIZED_SUCCEES});
 
 export const initializeApp = () => (dispatch) => {
     let promise = dispatch(getOnMeThunk());

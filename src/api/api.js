@@ -38,9 +38,9 @@ export const login = () => {
         `auth/login`).then(response => response.data);
 };
 
-export const loginPost = (email, password, rememberMe = false) => {
+export const loginPost = (email, password, rememberMe = false, captcha = null) => {
     return instance.post(
-        `auth/login`, {email, password, rememberMe}).then(response => response.data);
+        `auth/login`, {email, password, rememberMe, captcha}).then(response => response.data);
 };
 
 export const logout = () => {
@@ -68,4 +68,15 @@ export const savePhotoAPI = (photos) => {
             'Content-Type': 'multipart/form-data'
         }
     });
+}
+
+export const saveProfileAPI = (profile) => {
+    return instance.put(`profile`, profile);
+}
+
+export const securitiAPI = {
+    getCaptchaUrl () {
+        return instance.get(`/security/get-captcha-url`);
+    }
+    
 }

@@ -1,4 +1,5 @@
-import { getOnUserProfile, getStatus, updateStatus, savePhotoAPI } from '../api/api';
+import { getOnUserProfile, getStatus, updateStatus, savePhotoAPI, saveProfileAPI } from '../api/api';
+import { stopSubmit } from 'redux-form';
 
 const ADD_POST = 'ADD-POST';
 //const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -99,6 +100,7 @@ export const setUserProfile = (profile) => {
     }
 }
 
+
 export const setStatus = (status) => ({status, type: SET_STATUS})
 
 export const deletePost = (id) => {
@@ -131,5 +133,16 @@ export const savePhoto = (file) => async (dispatch) => {
     let response = await  savePhotoAPI(file);
     if (response.data.resultCode === 0){
         dispatch(setPhotoSuccess(response.data.data.photos));
+    }
+}
+
+export const saveProfile = (profile) => async (dispatch, getState) => {
+    const id = getState().auth.userId;
+    let response = await  saveProfileAPI(profile);
+    if (response.data.resultCode === 0){
+        dispatch(getOnUserProfileThink(id));
+    } else {
+        dispatch(stopSubmit('edit-profile', {_error: response.data.messages[0]}));
+        return Promise.reject(response.data.messages[0])
     }
 }
